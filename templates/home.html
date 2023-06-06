@@ -1,3 +1,141 @@
-<h1>
-    Hello this is runing
-</h1>
+<!Doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ML API </title>
+
+ <style>
+        body {
+
+            font-family: Arial, sans-serif;
+	    background-color: #725BD9 ;
+            background-image :linear-gradient(to top,  #1B0D5F,#3D336A);
+        }
+
+        h1 {
+            text-align: center;
+            color:#000000;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #725BD9 ;
+	    background-image :linear-gradient(to bottom, #684DE5,#3D336A);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+	    margin-top: 10px;
+		
+            color: #000000;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+	    background-image :linear-gradient(to bottom, #ffffff,  #725BD9,#725BD9);
+        }
+	
+	::placeholder {
+            color: black;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px;
+            background-image: linear-gradient(to bottom,  #725BD9,#3D336A);
+            color: black;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+	    margin-bottom: 20px;
+	    margin-top: 40px;
+        }
+
+        .btn-block {
+            display: block;
+            width: 60%;
+        }
+
+        .btn-large {
+            font-size: 20px;
+        }
+
+        .prediction {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color: black;
+        }
+    </style>
+
+</head>
+<body>
+<div class="login">
+    <h1>Boston House Price Prediction</h1>
+
+    <!-- Main Input for reciving query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+        <p class="prediction">{{ prediction_text }}</p>
+
+        <label for="CRIM">CRIM:</label>
+        <input type="text" name="CRIM" placeholder="Enter CRIM" required><br>
+
+        <label for="ZN">ZN:</label>
+        <input type="text" name="ZN" placeholder="Enter ZN" required><br>
+
+        <label for="INDUS">INDUS:</label>
+        <input type="text" name="INDUS" placeholder="Enter INDUS" required><br>
+
+        <label for="CHAS">CHAS:</label>
+        <input type="text" name="CHAS" placeholder="Enter CHAS" required><br>
+
+        <label for="NOX">NOX:</label>
+        <input type="text" name="NOX" placeholder="Enter NOX" required><br>
+
+        <label for="RM">RM:</label>
+        <input type="text" name="RM" placeholder="Enter RM" required><br>
+
+        <label for="AGE">AGE:</label>
+        <input type="text" name="AGE" placeholder="Enter AGE" required><br>
+
+        <label for="DIS">DIS:</label>
+        <input type="text" name="DIS" placeholder="Enter DIS" required><br>
+
+        <label for="RAD">RAD:</label>
+        <input type="text" name="RAD" placeholder="Enter RAD" required><br>
+
+        <label for="TAX">TAX:</label>
+        <input type="text" name="TAX" placeholder="Enter TAX" required><br>
+
+        <label for="PTRATIO">PTRATIO:</label>
+        <input type="text" name="PTRATIO" placeholder="Enter PTRATIO" required><br>
+
+        <label for="B">B:</label>
+        <input type="text" name="B" placeholder="Enter B" required><br>
+
+        <label for="LSTAT">LSTAT:</label>
+        <input type="text" name="LSTAT" placeholder="Enter LSTAT" required><br>
+
+        <button type="submit" class = "btn btn-primary btn-block btn-large">Predict</button>
+
+        <p class="prediction">{{ prediction_text }}</p>
+    </form>
+    </div>
+
+       
+
+</body>
+
+</html>

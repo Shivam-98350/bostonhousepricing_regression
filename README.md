@@ -7,9 +7,8 @@
 3. [VSCodeIDE](https://code.visualstudio.com)
 4. [GitCLI](https://git-scm.com/downloads)
 
- ## Create a new enviroment 
+## Create a new enviroment
 
 ```
-conda create -p venv python==3.7 -y
+conda create -p venv python==3.11 -y
 ```
-
